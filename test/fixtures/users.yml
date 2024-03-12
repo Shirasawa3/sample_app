@@ -1,1 +1,6 @@
 #６章で一旦空にした（データベースのインデックスを追加し一意性を強制したら、testを通らなくなったため）
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
+#fixture用のパスワードは'password'
