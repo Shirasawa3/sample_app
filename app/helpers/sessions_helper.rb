@@ -14,4 +14,11 @@ module SessionsHelper
   def logged_in?
     !current_user.nil? #current_userが空じゃない時にtrue
   end
+
+  def log_out
+    reset_session
+    @current_user = nil
+  end
+
+
 end
