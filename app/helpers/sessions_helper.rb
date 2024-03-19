@@ -30,6 +30,10 @@ module SessionsHelper
     end
   end
 
+  def current_user?(user)
+    user && user == current_user
+  end
+
   def logged_in?
     !current_user.nil? #current_userが空じゃない時にtrue
   end
@@ -47,7 +51,9 @@ module SessionsHelper
     @current_user = nil
   end
 
-
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
 
 
 end
